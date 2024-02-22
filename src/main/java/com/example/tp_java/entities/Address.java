@@ -7,21 +7,6 @@ import lombok.Data;
 @Entity
 public class Address {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String number;
-
-    private String street;
-
-    private String zipCode;
-
-    private String city;
-
-    @OneToOne
-    private PetStore petStore;
-
     public Long getId() {
         return id;
     }
@@ -61,4 +46,28 @@ public class Address {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public PetStore getPetStore() {
+        return petStore;
+    }
+
+    public void setPetStore(PetStore petStore) {
+        this.petStore = petStore;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String number;
+
+    private String street;
+
+    private String zipCode;
+
+    private String city;
+
+    @OneToOne
+    private PetStore petStore;
+
 }

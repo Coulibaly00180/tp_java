@@ -7,7 +7,16 @@ import java.util.Date;
 
 @Data
 @Entity
-public class Animal {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Animal {
+
+    public PetStore getPetStore() {
+        return petStore;
+    }
+
+    public void setPetStore(PetStore petStore) {
+        this.petStore = petStore;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
